@@ -161,15 +161,11 @@ div.prop {
   background-color: rgba(0, 0, 255, 0.1);
 }
 body.transition #body * {
-  transition: 2s;
-  -moz-transition: 2s;
-  -webkit-transition: 2s;
+  transition: 1s;
 }
 div.control-section {
   padding: 7px;
   box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   background: #666;
 }
 div.regle {

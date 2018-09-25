@@ -11,6 +11,7 @@ class Regle {
 		document.head.appendChild(this.style);
 	}
 	static init() {
+		console.log(this.name, "init");
 
 	}
 	get dom() {

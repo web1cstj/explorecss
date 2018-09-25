@@ -59,6 +59,7 @@ class Prop{
 		return this;
 	}
 	static init() {
+		console.log(this.name, "init");
 		var self = this;
 		this.dureeTransition = 2;
 		this.control = null;
