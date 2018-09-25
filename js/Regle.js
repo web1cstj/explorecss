@@ -6,7 +6,7 @@ class Regle {
 		this.objFeuille = new Feuille(this);
 		this._dom = null;
 		this.style = null;
-		this.style = document.createElement('style');
+		this.style = document.createElement("style");
 		this.style.setAttribute('type', "text/css");
 		document.head.appendChild(this.style);
 	}
@@ -34,13 +34,27 @@ class Regle {
 		this.style.innerHTML = styleTxt;
 		return this;
 	}
+	enlever() {
+		this.style.parentNode.removeChild(this.style);
+		this.dom.parentNode.parentNode.removeChild(this.dom.parentNode);
+	}
 	creerDom() {
 		var resultat = document.createElement('div');
 		resultat.classList.add('regle');
+		resultat.appendChild(this.dom_enlever());
 		resultat.appendChild(this.objSelecteur.dom);
 		resultat.appendChild(this.objFeuille.dom);
 		resultat.obj = this;
 		this._dom = resultat;
+		return resultat;
+	}
+	dom_enlever() {
+		var resultat = document.createElement("span");
+		resultat.innerHTML = "&times;";
+		resultat.classList.add("enlever");
+		resultat.addEventListener("click", (e) => {
+			e.target.closest(".regle").obj.enlever();
+		});
 		return resultat;
 	}
 	/* Compose une règle avec les props et le texte du dom */

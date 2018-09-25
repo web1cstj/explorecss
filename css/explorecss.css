@@ -161,11 +161,15 @@ div.prop {
   background-color: rgba(0, 0, 255, 0.1);
 }
 body.transition #body * {
-  transition: 1s;
+  transition: 2s;
+  -moz-transition: 2s;
+  -webkit-transition: 2s;
 }
 div.control-section {
   padding: 7px;
   box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   background: #666;
 }
 div.regle {
@@ -174,6 +178,28 @@ div.regle {
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+div.regle *.enlever {
+  font-size: smaller;
+  position: absolute;
+  right: 0em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  border-radius: 00% 0 00% 50%;
+  border: 1px solid #999;
+  border-width: 0 0 1px 1px;
+  color: #666;
+  z-index: 1000;
+  cursor: pointer;
+}
+div.regle *.enlever:hover {
+  background-color: yellow;
 }
 div.regle > * {
   flex: 1 0 auto;
