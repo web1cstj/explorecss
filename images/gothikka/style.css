@@ -1,0 +1,20 @@
+@font-face {
+    font-family:gothikka;
+    src: url(Gothikka.ttf);
+}
+@font-face {
+    font-family:gothikka;
+    src: url(Gothikka-bold.ttf);
+    font-weight:bold;
+}
+@font-face {
+    font-family:gothikka;
+    src: url(Gothikka-Italic.ttf);
+    font-style:italic;
+}
+@font-face {
+    font-family:gothikka;
+    src: url(Gothikka-BoldItalic.ttf);
+    font-weight:bold;
+    font-style:italic;
+}

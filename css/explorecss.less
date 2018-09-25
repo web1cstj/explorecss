@@ -1,0 +1,283 @@
+html {
+	height:100%;
+}
+body {
+	display:flex;
+	height:100%;
+	margin:0;
+	padding:0;
+	flex-direction: row-reverse;
+}
+#body {
+	overflow-y: auto;
+}
+body > *, #body > *, {
+	flex: 1 0 0px;
+}
+*:first-line {
+}
+*:first-letter {
+}
+*:before {
+}
+*:after {
+}
+#control  {
+	border-right:1px solid black;
+	display:flex;
+	flex-direction:column;
+	width: 30%;
+	flex: 0 0 30%;
+	&>* {
+		flex: 1 0 0;
+	}
+	&.gros div.edition {
+		font-size:20px;
+	}
+	& > h1 {
+		flex: 0 0 auto;
+		background-color:#336;
+		color:white;
+		margin:0;
+		zzzmargin-top:-32px;
+		font-size:1.2em;
+		font-family:arial;
+		text-align:left;
+		padding:0 .25em;
+		height:32px;
+		line-height:32px;
+		zzzposition:relative;
+	}
+	& > div.body {
+		flex: 1 0 0;
+		display: flex;
+		flex-direction: column;
+		& > * {
+			flex: 1 1 0px;
+		}
+	}
+	& h1 span.bouton {
+		float:right;
+	}
+	& h1 span.bouton.appliquer {
+	  background-color: green;
+	  box-shadow: none;
+	  text-shadow: none;
+	}
+	& h1 span.bouton.transition {
+	}
+}
+#control .control-section,
+.control-section > div.regle {
+	zzzheight:100%;
+}
+& .control-section {
+	display: flex;
+	flex-direction: column;
+	&>* {
+		flex: 1 0 auto;
+	}
+	div.groupe {
+		display: flex;
+		flex-direction: column;
+		&>* {
+			flex: 1 0 0;
+		}
+		&>h1 {
+			flex: 0 0 24px;
+			background-color:rgba(0,0,63,.2);
+			background-image:-moz-linear-gradient(180deg, rgba(255,255,255,.8), rgba(255,255,255,0) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,.2));
+			background-image:-webkit-linear-gradient(180deg, rgba(255,255,255,.8), rgba(255,255,255,0) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,.2));
+			background-image:linear-gradient(180deg, rgba(255,255,255,.8), rgba(255,255,255,0) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,.2));
+			color:rgb(50,50,100);
+			margin:0;
+			font-size:1em;
+			font-family:arial;
+			text-align:left;
+			padding:0 .25em;
+			line-height:24px;
+			position:relative;
+			text-shadow:0px 1px white;
+		}
+	}
+}
+#control .control-section,
+.control-section > div.regle,
+.control-section > div.regle > div {
+	zzzposition:relative;
+}
+span.bouton {
+	border:1px solid white;
+/*
+	background-image:-moz-linear-gradient(top, rgba(255,255,255,.8), rgba(255,255,255,0) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,.5));
+	background-image:-webkit-linear-gradient(top, rgba(255,255,255,.8), rgba(255,255,255,0) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,.5));
+*/
+	min-width:1em;
+	padding:0 .5em;
+	height:1em;
+	line-height:1em;
+	border-radius:1em;
+	margin-top:.2em;
+	cursor:pointer;
+	background-color: rgba(255, 255, 255, 0.3);
+	box-shadow: 1px 1px 2px black inset;
+	font-size: smaller;
+	text-shadow: 1px 1px 2px black;
+	text-align:center;
+}
+.transition span.bouton.transition {
+  background-color: #FF0;
+  box-shadow: 0 0 6px #FF0;
+  text-shadow:none;
+  color:rgba(0,0,0,.5);
+}
+.elements span.bouton.elements,
+.balise span.bouton.balise {
+	background-color:#F90;
+  box-shadow: 0 0 6px #F90;
+  text-shadow:none;
+  color:rgba(0,0,0,.5);
+}
+div.edition {
+	overflow:auto;
+	white-space:pre;
+	box-shadow:1px 1px 3px rgba(0,0,0,.5) inset;
+	padding:.25em;
+	font-family:monospace;
+}
+div.prop {
+	border-bottom:1px solid black;
+	font-family:monospace;
+	line-height:1.2em;
+}
+.case {
+	display:inline-block;
+	height:1.2em;
+	line-height:1.2em;
+	background-color:rgba(0,0,0,.2);
+}
+.case:empty {
+	width:1em;
+}
+.case:empty:before {
+	content:"\a0";
+}
+.case.val {
+}
+.case.nom:empty {
+	background-color:rgba(0,255,0,.1);
+}
+.case.val:empty {
+	background-color:rgba(0,0,255,.1);
+}
+body.transition #body * {
+	transition:2s;
+	-moz-transition:2s;
+	-webkit-transition:2s;
+}
+div.control-section {
+	padding:7px;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	background:#666;
+}
+div.regle {
+	border:1px solid black;
+	background-color:white;
+	box-shadow:2px 2px 3px rgba(0,0,0,.5);
+	display:flex;
+	flex-direction: column;
+	&>* {
+		flex: 1 0 auto;
+	}
+	&>div.groupe-selecteur {
+		flex: 0 0 auto;
+		*.selecteur.edition {
+			flex: 0 0 auto;
+		}
+	}
+	&>div.groupe-proprietes {
+		flex: 1 0 auto;
+	}
+}
+div.regle>div {
+
+}
+div.control-section {
+	position: relative;
+	& > div.barre {
+		position: absolute;
+		height: 6px;
+		left: 0;
+		right: 0;
+		background-image: linear-gradient(
+			to top,
+			rgba(51,51,51,1),
+			rgba(255,255,255,1)
+		);
+		cursor: ns-resize;
+	}
+	& + div.control-section {
+		padding-top: 0;
+	}
+	&:first-child > div.barre {
+		display:none;
+	}
+}
+div.panneau {
+	position: relative;
+	& > div.barre {
+		position: absolute;
+		height: 6px;
+		left: 0;
+		right: 0;
+		bottom: 0px;
+		background-image: linear-gradient(
+			to top,
+			rgba(51,51,51,1),
+			rgba(255,255,255,1)
+		);
+		cursor: ns-resize;
+	}
+	& + div.control-section {
+		padding-top: 0;
+	}
+	&:last-child > div.barre {
+		display:none;
+	}
+}
+/*
+h1.ferme+div {
+	display:none;
+}
+*/
+
+
+
+/* essai tableau */
+/*
+
+div.regle {
+	display:table;
+	width:100%;
+	height:100%;
+}
+div.regle > div {
+	display:table-row;
+}
+*/
+@keyframes boing {
+	0% {
+		transform:scale(1);
+	}
+	30% {
+		transform:scale(1.2);
+	}
+	60% {
+		transform:scale(.9);
+	}
+	100% {
+		transform:scale(1);
+	}
+}
